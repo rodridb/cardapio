@@ -18,8 +18,9 @@ class ProdutoRepositorio
             $dados['tipo'],
             $dados['nome'],
             $dados['descricao'],
-            $dados['imagem'],
-            $dados['preco']);
+            $dados['preco'],
+            $dados['imagem']
+            );
     }
 
     public function opcoesCafe(): array
@@ -76,5 +77,17 @@ class ProdutoRepositorio
     $statement->bindValue(5,$produto->getImagem());
     $statement->execute();
 }
+
+    public function buscar(int $id)
+    {
+        $sql = "SELECT * FROM produtos WHERE id = ?";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindValue(1, $id);
+        $statement->execute();
+
+        $dados = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $this->formarObjeto($dados);
+    }
 }
 

@@ -15,10 +15,9 @@
 $produtoRepositorio = new ProdutoRepositorio($pdo);
 $produtoRepositorio->salvar($produto);
 
+header("location: admin.php");
+
 }
-
-
-
 
 ?>
 

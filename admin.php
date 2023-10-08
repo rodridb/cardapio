@@ -56,7 +56,7 @@
                         <td><?=  $produto->getTipo() ?></td>
                         <td><?php echo $produto->getDescricao() ?></td>
                         <td><?php echo $produto->getPrecoFormatado() ?></td>
-                        <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
+                        <td><a class="botao-editar" href="editar-produto.php?id=<?= $produto->getId() ?>">Editar</a></td>
                         <td>
                             <form action="./excluir-produto.php" method="post">
                                 <input type="hidden" name="id" value="<?= $produto->getId();?>">
@@ -67,7 +67,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <a class="botao-cadastrar" href="cadastrar-produto.html">Cadastrar produto</a>
+            <a class="botao-cadastrar" href="cadastrar-produto.php">Cadastrar produto</a>
             <form action="#" method="post">
                 <input type="submit" class="botao-cadastrar" value="Baixar Relatório" />
             </form>
