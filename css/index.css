@@ -3,12 +3,30 @@
 }
 
 body{
-    background-color: #333B1E;
+    background-color: #801316;
     font-family: 'Barlow', sans-serif;
 }
 main{
     height: 100vh;
 }
+
+.botao-cadastrar{
+    background: #EBC181;
+    color: black;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border: none;
+}
+
+.divCheck2{
+    margin: 10px 0 0 5px;
+    width: 80%;
+    font-size: 13px;
+    color: red;
+  }
 
 .container-banner{
     width: 100%;

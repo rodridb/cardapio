@@ -81,7 +81,7 @@ table td{
 table tbody tr td a, .botao-cadastrar, .botao-excluir{
     padding: 3px 10px;
     border-radius: 10px;
-    color: #FFFFFF;
+    color: #801316;
     text-decoration: none;
     margin: 0 5px;
     transition: 0.7s;
@@ -97,7 +97,7 @@ table tbody tr td a:hover, .botao-cadastrar:hover, .botao-excluir:hover{
 
 .botao-cadastrar{
     background: #EBC181;
-    color: #333B1E;
+    color: black;
     font-weight: 600;
     margin-top: 20px;
     font-size: 20px;

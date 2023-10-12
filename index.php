@@ -26,19 +26,19 @@
     <link rel="icon" href="img/icone-serenatto.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Serenatto - Cardápio</title>
+    <title>Inventário - Index</title>
 </head>
 <body>
     <main>
-        <section class="container-banner">
+        <!--<section class="container-banner">
             <div class="container-texto-banner">
                 <img src="img/logo-serenatto.png" class="logo" alt="logo-serenatto">
             </div>
-        </section>
-        <h2>Cardápio Digital</h2>
-        <section class="container-cafe-manha">
+        </section>-->
+        <h2>PRODUTOS CADASTRADOS</h2>
+        <!--<section class="container-cafe-manha">
             <div class="container-cafe-manha-titulo">
-                <h3>Opções para o Café</h3>
+                <h3>EQUIPAMENTOS</h3>
                 <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-cafe-manha-produtos">
@@ -56,7 +56,7 @@
         </section>
         <section class="container-almoco">
             <div class="container-almoco-titulo">
-                <h3>Opções para o Almoço</h3>
+                <h3>LICENÇAS</h3>
                 <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-almoco-produtos">
@@ -72,7 +72,59 @@
                 <?php endforeach; ?>
             </div>
 
-        </section>
+        </section>-->
+        <table>
+    <tr>
+        <!-- Equipamentos -->
+        <td>
+            <div class="container-cafe-manha">
+                <div class="container-cafe-manha-titulo">
+                    <h3>EQUIPAMENTOS</h3>
+                    <input type="submit" class="botao-cadastrar" value="EDITAR CADASTROS" action="editar-produto.php"/>
+                    <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                </div>
+                <div class="container-cafe-manha-produtos">
+                    <?php foreach ($dadosCafe as $cafe):?>
+                        <div class="container-produto">
+                            <div class="container-foto">
+                                <img src="<?= $cafe->getImagemDiretorio() ?>">
+                            </div>
+                            <p><?= $cafe->getNome()?></p>
+                            <p><?= $cafe->getDescricao()?></p>
+                            <p><?= $cafe->getPrecoFormatado() ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </td>
+
+        <!-- Licenças -->
+        <td>
+            <div class="container-almoco">
+                <div class="container-almoco-titulo">
+                    <h3>LICENÇAS</h3>
+                    <form action="cadastrar-produto.php">
+                    <input type="submit" class="botao-cadastrar" value="CADASTRAR PRODUTOS"/>
+                    </form>
+                    <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                </div>
+                <div class="container-almoco-produtos">
+                    <?php foreach ($dadosAlmoco as $almoco):?>
+                        <div class="container-produto">
+                            <div class="container-foto">
+                                <img src="<?= $almoco->getImagemDiretorio()?>">
+                            </div>
+                            <p><?= $almoco->getNome()?></p>
+                            <p><?= $almoco->getDescricao()?></p>
+                            <p><?= $almoco->getPrecoFormatado() ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
     </main>
 </body>
 </html>
